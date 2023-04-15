@@ -1,0 +1,25 @@
+﻿@model List<COMP003B.Assignment3_.Models.Domain.gadget>
+  
+@{
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var gadget in Model)
+        {
+            <tr>
+                <td>@gadget.Id </td>
+                <td>@gadget.Name</td>
+                <td>@gadget.Price </td>
+                <td><a href="Gadget/View/@gadget.Id">View</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

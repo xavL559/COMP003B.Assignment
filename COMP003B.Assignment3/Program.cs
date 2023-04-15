@@ -1,3 +1,6 @@
+using COMP003B.Assignment3_.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace COMP003B.Assignment3_
 {
     public class Program
@@ -8,6 +11,9 @@ namespace COMP003B.Assignment3_
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<MVCDemoDBContext>(options =>
+            options.UseSqlServer(builder.Configuration
+            .GetConnectionString("MvcDemoConnectionString")));
 
             var app = builder.Build();
 
